@@ -1,0 +1,7 @@
+did_you_do_it:
+    resource: "@DidYouDoItBundle/Resources/config/routing.yml"
+    prefix:   /didyoudoit/
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

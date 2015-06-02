@@ -1,0 +1,16 @@
+<services>
+    <service id="doctrinepersistance" class="%did_you_do_it_doctrine_persistance%" public="false">
+        <argument type="service" id="doctrine.orm.entity_manager" />
+        <argument></argument>
+    </service>
+    <service id="googlepersistance" class="%did_you_do_it_doctrine_google%" public="false">
+        <argument type="service" id="doctrine.orm.entity_manager" />
+        <argument></argument>
+    </service>
+    <service id="persistance" alias="doctrinepersistance" />
+</services>
+
+<!-- services:
+#    did_you_do_it.example:
+#        class: Projects\DidYouDoItBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%] -->

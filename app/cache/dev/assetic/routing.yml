@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: /home/stephen/Travail/php-vm/projects/sf2/app/config/routing_dev.yml

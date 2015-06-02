@@ -1,0 +1,48 @@
+did_you_do_it_homepage:
+    path:     /{name}
+    defaults: { _controller: DidYouDoItBundle:Default:index }
+did_you_do_it_get_all_tasklist:
+    path:     /tasklist
+    defaults: { _controller: DidYouDoItBundle:TaskList:getAll }
+    requirements:
+        _method: GET
+did_you_do_it_get_one_tasklist:
+    path:     /tasklist/{name}
+    defaults: { _controller: DidYouDoItBundle:TaskList:getOne }
+    requirements:
+        _method: GET
+did_you_do_it_create_tasklist:
+    path:     /tasklist
+    defaults: { _controller: DidYouDoItBundle:TaskList:create }
+    requirements:
+        _method: POST
+did_you_do_it_delete_tasklist:
+    path:     /tasklist/{name}
+    defaults: { _controller: DidYouDoItBundle:TaskList:delete }
+    requirements:
+        _method: DELETE
+did_you_do_it_modify_name_tasklist:
+    path:     /tasklist/{name}
+    defaults: { _controller: DidYouDoItBundle:TaskList:modifyName }
+    requirements:
+        _method: PUT
+did_you_do_it_create_task_from_tasklist:
+    path:     /tasklist/{name}/task
+    defaults: { _controller: DidYouDoItBundle:Task:create }
+    requirements:
+        _method: POST
+did_you_do_it_modify_libelle_or_checked_task_from_tasklist:
+    path:     /tasklist/{name}/task/{libelle}
+    defaults: { _controller: DidYouDoItBundle:Task:modifyLibelleOrChecked }
+    requirements:
+        _method: PUT
+did_you_do_it_create_task:
+    path:     /tasklist/task
+    defaults: { _controller: DidYouDoItBundle:Task:create }
+    requirements:
+        _method: POST
+did_you_do_it_modify_libelle_or_checked_task_from_tasklist:
+    path:     /tasklist/task/{libelle}
+    defaults: { _controller: DidYouDoItBundle:Task:modifyLibelleOrChecked }
+    requirements:
+        _method: PUT
