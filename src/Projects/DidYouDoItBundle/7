@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://symfony.com/schema/dic/services/services-1.0.xsd">
+</container>
+
+<!-- services:
+#    did_you_do_it.example:
+#        class: Projects\DidYouDoItBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%] -->

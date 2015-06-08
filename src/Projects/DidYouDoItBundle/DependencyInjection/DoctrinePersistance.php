@@ -21,21 +21,21 @@ class DoctrinePersistance implements PersistanceManager
         $this->manager = $doctrineEntityManager;
     }
 
-    /** find all task lists with their tasks
+    /** Find all task lists with their tasks
      */
     public function findTaskList()
     {
-        
+         
     }
 
-    /** find one task list by his name with their tasks
+    /** Find one task list by his name with their tasks
      */
     public function findTaskListByName($name);
     {
 
     }
 
-    /** create a new tasklist
+    /** Create a new tasklist
      */
     public function persistTaskList(TaskList $tasklist);
     {

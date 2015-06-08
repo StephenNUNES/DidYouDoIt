@@ -139,6 +139,7 @@ class appDevDebugProjectContainer extends Container
             'monolog.logger.security' => 'getMonolog_Logger_SecurityService',
             'monolog.logger.templating' => 'getMonolog_Logger_TemplatingService',
             'monolog.logger.translation' => 'getMonolog_Logger_TranslationService',
+            'persistance' => 'getPersistanceService',
             'profiler' => 'getProfilerService',
             'profiler_listener' => 'getProfilerListenerService',
             'property_accessor' => 'getPropertyAccessorService',
@@ -1743,6 +1744,19 @@ class appDevDebugProjectContainer extends Container
         $instance->pushHandler($this->get('monolog.handler.debug'));
 
         return $instance;
+    }
+
+    /**
+     * Gets the 'persistance' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return \Projects\DidYouDoItBundle\DependencyInjection\DoctrinePersistance A Projects\DidYouDoItBundle\DependencyInjection\DoctrinePersistance instance.
+     */
+    protected function getPersistanceService()
+    {
+        return $this->services['persistance'] = new \Projects\DidYouDoItBundle\DependencyInjection\DoctrinePersistance($this->get('doctrine.orm.default_entity_manager'), '');
     }
 
     /**
@@ -3721,6 +3735,8 @@ class appDevDebugProjectContainer extends Container
             'mailer_password' => NULL,
             'locale' => 'en',
             'secret' => 'ThisTokenIsNotSoSecretChangeIt',
+            'did_you_do_it_doctrine_persistance' => 'Projects\\DidYouDoItBundle\\DependencyInjection\\DoctrinePersistance',
+            'did_you_do_it_google_persistance' => 'Projects\\DidYouDoItBundle\\DependencyInjection\\GooglePersistance',
             'controller_resolver.class' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerResolver',
             'controller_name_converter.class' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerNameParser',
             'response_listener.class' => 'Symfony\\Component\\HttpKernel\\EventListener\\ResponseListener',
@@ -4281,6 +4297,8 @@ class appDevDebugProjectContainer extends Container
             'sensio_framework_extra.converter.doctrine.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\DoctrineParamConverter',
             'sensio_framework_extra.converter.datetime.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\DateTimeParamConverter',
             'sensio_framework_extra.view.listener.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\TemplateListener',
+            'didyoudoitbundle.doctrinepersistance.class' => 'DidYouDoItBundle\\DependencyInjection\\DoctrinePersistance',
+            'didyoudoitbundle.googlepersistance.class' => 'DidYouDoItBundle\\DependencyInjection\\GooglePersistance',
             'web_profiler.controller.profiler.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ProfilerController',
             'web_profiler.controller.router.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\RouterController',
             'web_profiler.controller.exception.class' => 'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ExceptionController',

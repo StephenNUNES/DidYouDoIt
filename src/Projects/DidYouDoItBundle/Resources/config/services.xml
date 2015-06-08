@@ -1,14 +1,23 @@
-<services>
-    <service id="doctrinepersistance" class="%did_you_do_it_doctrine_persistance%" public="false">
-        <argument type="service" id="doctrine.orm.entity_manager" />
-        <argument></argument>
-    </service>
-    <service id="googlepersistance" class="%did_you_do_it_doctrine_google%" public="false">
-        <argument type="service" id="doctrine.orm.entity_manager" />
-        <argument></argument>
-    </service>
-    <service id="persistance" alias="doctrinepersistance" />
-</services>
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+        <parameter key="DidYouDoItBundle.DoctrinePersistance.class">DidYouDoItBundle\DependencyInjection\DoctrinePersistance</parameter>
+        <parameter key="DidYouDoItBundle.GooglePersistance.class">DidYouDoItBundle\DependencyInjection\GooglePersistance</parameter>
+    </parameters>
+
+    <services>
+        <service id="DoctrinePersistance" class="%did_you_do_it_doctrine_persistance%" public="false">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument></argument>
+        </service>
+        <service id="GooglePersistance" class="%did_you_do_it_google_persistance%" public="false">
+            <argument></argument>
+            <argument></argument>
+        </service>
+        <service id="persistance" alias="doctrinepersistance" />
+    </services>
+</container>
 
 <!-- services:
 #    did_you_do_it.example:
