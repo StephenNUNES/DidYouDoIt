@@ -33,6 +33,14 @@ class TaskList
     }
 
     /**
+     * Set id
+     */ 
+    public function setTasklistId($id)
+    {
+        $this->tasklist_id = $id;
+    }
+
+    /**
      * Set name
      *
      * @param string $name
@@ -54,4 +62,9 @@ class TaskList
     {
         return $this->name;
     }
+    
+    public function __toString()
+    {
+		return $this->name;
+	}
 }

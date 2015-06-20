@@ -2,8 +2,8 @@
 
 namespace Projects\DidYouDoItBundle\DependencyInjection;
 
-use Projects\DidYouDoItBundle\Entity\Task.php;
-use Projects\DidYouDoItBundle\Entity\TaskList.php;
+use Projects\DidYouDoItBundle\Entity\Task;
+use Projects\DidYouDoItBundle\Entity\TaskList;
 
 /** Define behaviour to persist data of DidYouDoIt
  */
@@ -13,9 +13,9 @@ interface PersistanceManager
      */
     public function findTaskList();
 
-    /** find one task list by his name with their tasks
+    /** find one task list by his id with their tasks
      */
-    public function findTaskListByName($name);
+    public function findTaskListById($id);
 
     /** create a new tasklist
      */
@@ -23,19 +23,31 @@ interface PersistanceManager
 
     /** modify the name of the task list
      */
-    public function updateTaskList(TaskList $tasklist, $name);
+    public function updateTaskList(TaskList $tasklist, $id);
 
-    /** delete a task list
+    /** Delete a task list and his tasks
      */
-    public function removeTaskList(Task $task);
+    public function removeTaskList(TaskList $tasklist);
+
+    /** Find a Task by Id
+     */
+    public function findTaskById($id);
 
     /** add new task in a tasklist 
      */
-    public function persistTask(Task $task, TaskList $tasklist);
+    public function persistTask(Task $task);
 
     /** modify label of task or if is checked
      * parameters must be optionnal
      */
     public function updateTask(Task $task, $newlabel, $checked);
+
+    /** Find all task in the tasklist
+     */
+    public function findAllTaskInOneTaskList(TaskList $tasklist);
+
+    /** Allow persistance to commit changes
+     */
+    public function flush();
 
 }

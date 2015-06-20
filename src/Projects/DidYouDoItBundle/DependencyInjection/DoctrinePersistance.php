@@ -2,6 +2,8 @@
 
 namespace Projects\DidYouDoItBundle\DependencyInjection;
 
+use Projects\DidYouDoItBundle\Entity\Task;
+use Projects\DidYouDoItBundle\Entity\TaskList;
 
 /**
  * Service allow application to persist data in data base with Doctrine
@@ -25,50 +27,91 @@ class DoctrinePersistance implements PersistanceManager
      */
     public function findTaskList()
     {
-         
+        $repository = $this->manager->getRepository('DidYouDoItBundle:TaskList');
+        return $repository->findAll();
     }
 
-    /** Find one task list by his name with their tasks
+    /** Find one task list by his id with their tasks
      */
-    public function findTaskListByName($name);
+    public function findTaskListById($id)
     {
+        $repository = $this->manager->getRepository('DidYouDoItBundle:TaskList');
+        return $repository->find($id);
+    }
 
+    /** Find all Tasks in one Tasklist
+     */
+    public function findAllTaskInOneTaskList(TaskList $tasklist)
+    {
+        $query = $this->manager->createQuery(
+            'SELECT t
+            FROM DidYouDoItBundle:Task t
+            WHERE t.tasklist = :tasklistid
+            ORDER BY t.checked ASC'
+            )->setParameter('tasklistid', $tasklist->getTasklistId());
+        $tasks = $query->getResult();
+        return $tasks;
     }
 
     /** Create a new tasklist
      */
-    public function persistTaskList(TaskList $tasklist);
+    public function persistTaskList(TaskList $tasklist)
     {
-        $manager->persist($tasklist);
-        $manager->flush();
+        $this->manager->persist($tasklist);
     }
 
-    /** modify the name of the task list
+    /** modify the task list
      */
-    public function updateTaskList(TaskList $tasklist, $name);
+    public function updateTaskList(TaskList $tasklist, $id)
     {
-
+        return null;
     }
-    /** delete a task list
+
+    /** Delete a task list and his tasks
      */
-    public function removeTaskList(Task $task);
+    public function removeTaskList(TaskList $tasklist)
     {
-
+        $query = $this->manager->createQuery(
+            'SELECT t
+            FROM DidYouDoItBundle:Task t
+            WHERE t.tasklist = :tasklistid'
+            )->setParameter('tasklistid', $tasklist->getTasklistId());
+        $tasks = $query->getResult();
+        foreach ($tasks as $task)
+        {
+            $this->manager->remove($task);
+        }
+        $this->manager->remove($tasklist);
     }
+
+    /** Find a Task by Id
+     */
+    public function findTaskById($id)
+    {
+        $repository = $this->manager->getRepository('DidYouDoItBundle:Task');
+        return $repository->find($id);
+    }
+
     /** add new task in a tasklist 
      */
-    public function persistTask(Task $task, TaskList $tasklist);
+    public function persistTask(Task $task)
     {
-        $task->tasklist = $tasklist;
-        $manager->persist($task);
-        $manager->flush();
+        $this->manager->persist($task);
     }
 
     /** modify label of task or if is checked
      * parameters must be optionnal
      */
-    public function updateTask(Task $task, $newlabel, $checked);
+    public function updateTask(Task $task, $newlabel, $checked)
     {
+        return null;
+    }
 
+    /**
+     * Allow persistance to flush on Doctrine
+     */
+    public function flush()
+    {
+        $this->manager->flush();
     }
 }

@@ -1,6 +1,6 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_driver: 'pdo_mysql'
+    database_driver: pdo_mysql
     database_host: 127.0.0.1
     database_port: null
     database_name: sf2
@@ -12,5 +12,3 @@ parameters:
     mailer_password: null
     locale: en
     secret: ThisTokenIsNotSoSecretChangeIt
-    did_you_do_it_doctrine_persistance: Projects\DidYouDoItBundle\DependencyInjection\DoctrinePersistance
-    did_you_do_it_google_persistance: Projects\DidYouDoItBundle\DependencyInjection\GooglePersistance

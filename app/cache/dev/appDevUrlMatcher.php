@@ -27,6 +27,125 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         $context = $this->context;
         $request = $this->request;
 
+        if (0 === strpos($pathinfo, '/bootstrap')) {
+            if (0 === strpos($pathinfo, '/bootstrap/css/bootstrap')) {
+                // _assetic_bootstrap_css
+                if ($pathinfo === '/bootstrap/css/bootstrap.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_css',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_bootstrap_css',);
+                }
+
+                if (0 === strpos($pathinfo, '/bootstrap/css/bootstrap_')) {
+                    // _assetic_bootstrap_css_0
+                    if ($pathinfo === '/bootstrap/css/bootstrap_bootstrap_1.css') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_css',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_bootstrap_css_0',);
+                    }
+
+                    // _assetic_bootstrap_css_1
+                    if ($pathinfo === '/bootstrap/css/bootstrap_form_2.css') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_css',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_bootstrap_css_1',);
+                    }
+
+                }
+
+            }
+
+            if (0 === strpos($pathinfo, '/bootstrap/js')) {
+                if (0 === strpos($pathinfo, '/bootstrap/js/bootstrap')) {
+                    // _assetic_bootstrap_js
+                    if ($pathinfo === '/bootstrap/js/bootstrap.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js',);
+                    }
+
+                    if (0 === strpos($pathinfo, '/bootstrap/js/bootstrap_')) {
+                        // _assetic_bootstrap_js_0
+                        if ($pathinfo === '/bootstrap/js/bootstrap_transition_1.js') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js_0',);
+                        }
+
+                        // _assetic_bootstrap_js_1
+                        if ($pathinfo === '/bootstrap/js/bootstrap_alert_2.js') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => 1,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js_1',);
+                        }
+
+                        // _assetic_bootstrap_js_2
+                        if ($pathinfo === '/bootstrap/js/bootstrap_button_3.js') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => 2,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js_2',);
+                        }
+
+                        if (0 === strpos($pathinfo, '/bootstrap/js/bootstrap_c')) {
+                            // _assetic_bootstrap_js_3
+                            if ($pathinfo === '/bootstrap/js/bootstrap_carousel_4.js') {
+                                return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => 3,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js_3',);
+                            }
+
+                            // _assetic_bootstrap_js_4
+                            if ($pathinfo === '/bootstrap/js/bootstrap_collapse_5.js') {
+                                return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => 4,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js_4',);
+                            }
+
+                        }
+
+                        // _assetic_bootstrap_js_5
+                        if ($pathinfo === '/bootstrap/js/bootstrap_dropdown_6.js') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => 5,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js_5',);
+                        }
+
+                        // _assetic_bootstrap_js_6
+                        if ($pathinfo === '/bootstrap/js/bootstrap_modal_7.js') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => 6,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js_6',);
+                        }
+
+                        // _assetic_bootstrap_js_7
+                        if ($pathinfo === '/bootstrap/js/bootstrap_tooltip_8.js') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => 7,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js_7',);
+                        }
+
+                        // _assetic_bootstrap_js_8
+                        if ($pathinfo === '/bootstrap/js/bootstrap_popover_9.js') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => 8,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js_8',);
+                        }
+
+                        // _assetic_bootstrap_js_9
+                        if ($pathinfo === '/bootstrap/js/bootstrap_scrollspy_10.js') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => 9,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js_9',);
+                        }
+
+                        // _assetic_bootstrap_js_10
+                        if ($pathinfo === '/bootstrap/js/bootstrap_tab_11.js') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => 10,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js_10',);
+                        }
+
+                        // _assetic_bootstrap_js_11
+                        if ($pathinfo === '/bootstrap/js/bootstrap_affix_12.js') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => 11,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js_11',);
+                        }
+
+                        // _assetic_bootstrap_js_12
+                        if ($pathinfo === '/bootstrap/js/bootstrap_bc-bootstrap-collection_13.js') {
+                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'bootstrap_js',  'pos' => 12,  '_format' => 'js',  '_route' => '_assetic_bootstrap_js_12',);
+                        }
+
+                    }
+
+                }
+
+                if (0 === strpos($pathinfo, '/bootstrap/js/jquery')) {
+                    // _assetic_jquery
+                    if ($pathinfo === '/bootstrap/js/jquery.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'jquery',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_jquery',);
+                    }
+
+                    // _assetic_jquery_0
+                    if ($pathinfo === '/bootstrap/js/jquery_jquery-1.10.2_1.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => 'jquery',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_jquery_0',);
+                    }
+
+                }
+
+            }
+
+        }
+
         if (0 === strpos($pathinfo, '/_')) {
             // _wdt
             if (0 === strpos($pathinfo, '/_wdt') && preg_match('#^/_wdt/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
@@ -128,11 +247,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         if (0 === strpos($pathinfo, '/didyoudoit')) {
-            // did_you_do_it_homepage
-            if (preg_match('#^/didyoudoit/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'did_you_do_it_homepage')), array (  '_controller' => 'Projects\\DidYouDoItBundle\\Controller\\DefaultController::indexAction',));
-            }
-
             if (0 === strpos($pathinfo, '/didyoudoit/tasklist')) {
                 // did_you_do_it_get_all_tasklist
                 if ($pathinfo === '/didyoudoit/tasklist') {
@@ -146,7 +260,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 not_did_you_do_it_get_all_tasklist:
 
                 // did_you_do_it_get_one_tasklist
-                if (preg_match('#^/didyoudoit/tasklist/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+                if (preg_match('#^/didyoudoit/tasklist/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                     if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                         $allow = array_merge($allow, array('GET', 'HEAD'));
                         goto not_did_you_do_it_get_one_tasklist;
@@ -155,6 +269,21 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'did_you_do_it_get_one_tasklist')), array (  '_controller' => 'Projects\\DidYouDoItBundle\\Controller\\TaskListController::getOneAction',));
                 }
                 not_did_you_do_it_get_one_tasklist:
+
+                // did_you_do_it_new_tasklist
+                if (rtrim($pathinfo, '/') === '/didyoudoit/tasklist/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_did_you_do_it_new_tasklist;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'did_you_do_it_new_tasklist');
+                    }
+
+                    return array (  '_controller' => 'Projects\\DidYouDoItBundle\\Controller\\TaskListController::newAction',  '_route' => 'did_you_do_it_new_tasklist',);
+                }
+                not_did_you_do_it_new_tasklist:
 
                 // did_you_do_it_create_tasklist
                 if ($pathinfo === '/didyoudoit/tasklist') {
@@ -168,7 +297,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 not_did_you_do_it_create_tasklist:
 
                 // did_you_do_it_delete_tasklist
-                if (preg_match('#^/didyoudoit/tasklist/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
+                if (preg_match('#^/didyoudoit/tasklist/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                     if ($this->context->getMethod() != 'DELETE') {
                         $allow[] = 'DELETE';
                         goto not_did_you_do_it_delete_tasklist;
@@ -178,49 +307,96 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 }
                 not_did_you_do_it_delete_tasklist:
 
-                // did_you_do_it_modify_name_tasklist
-                if (preg_match('#^/didyoudoit/tasklist/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-                    if ($this->context->getMethod() != 'PUT') {
-                        $allow[] = 'PUT';
-                        goto not_did_you_do_it_modify_name_tasklist;
+                // did_you_do_it_edit_tasklist
+                if (preg_match('#^/didyoudoit/tasklist/(?P<id>[^/]++)/edit/?$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_did_you_do_it_edit_tasklist;
                     }
 
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'did_you_do_it_modify_name_tasklist')), array (  '_controller' => 'Projects\\DidYouDoItBundle\\Controller\\TaskListController::modifyNameAction',));
-                }
-                not_did_you_do_it_modify_name_tasklist:
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'did_you_do_it_edit_tasklist');
+                    }
 
-                // did_you_do_it_create_task_from_tasklist
-                if (preg_match('#^/didyoudoit/tasklist/(?P<name>[^/]++)/task$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'did_you_do_it_edit_tasklist')), array (  '_controller' => 'Projects\\DidYouDoItBundle\\Controller\\TaskListController::editAction',));
+                }
+                not_did_you_do_it_edit_tasklist:
+
+                // did_you_do_it_modify_tasklist
+                if (preg_match('#^/didyoudoit/tasklist/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'PUT') {
+                        $allow[] = 'PUT';
+                        goto not_did_you_do_it_modify_tasklist;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'did_you_do_it_modify_tasklist')), array (  '_controller' => 'Projects\\DidYouDoItBundle\\Controller\\TaskListController::modifyAction',));
+                }
+                not_did_you_do_it_modify_tasklist:
+
+                // did_you_do_it_new_task
+                if (preg_match('#^/didyoudoit/tasklist/(?P<idTaskList>[^/]++)/task/new/?$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_did_you_do_it_new_task;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'did_you_do_it_new_task');
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'did_you_do_it_new_task')), array (  '_controller' => 'Projects\\DidYouDoItBundle\\Controller\\TaskController::newAction',));
+                }
+                not_did_you_do_it_new_task:
+
+                // did_you_do_it_create_task
+                if (preg_match('#^/didyoudoit/tasklist/(?P<idTaskList>[^/]++)/task$#s', $pathinfo, $matches)) {
                     if ($this->context->getMethod() != 'POST') {
                         $allow[] = 'POST';
-                        goto not_did_you_do_it_create_task_from_tasklist;
+                        goto not_did_you_do_it_create_task;
                     }
 
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'did_you_do_it_create_task_from_tasklist')), array (  '_controller' => 'Projects\\DidYouDoItBundle\\Controller\\TaskController::createAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'did_you_do_it_create_task')), array (  '_controller' => 'Projects\\DidYouDoItBundle\\Controller\\TaskController::createAction',));
                 }
-                not_did_you_do_it_create_task_from_tasklist:
+                not_did_you_do_it_create_task:
 
-                // did_you_do_it_delete_task_from_tasklist
-                if (preg_match('#^/didyoudoit/tasklist/(?P<name>[^/]++)/task/(?P<libelle>[^/]++)$#s', $pathinfo, $matches)) {
-                    if ($this->context->getMethod() != 'DELETE') {
-                        $allow[] = 'DELETE';
-                        goto not_did_you_do_it_delete_task_from_tasklist;
+                // did_you_do_it_edit_task_from_tasklist
+                if (preg_match('#^/didyoudoit/tasklist/(?P<idTaskList>[^/]++)/task/(?P<idTask>[^/]++)/edit/?$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_did_you_do_it_edit_task_from_tasklist;
                     }
 
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'did_you_do_it_delete_task_from_tasklist')), array (  '_controller' => 'Projects\\DidYouDoItBundle\\Controller\\TaskController::deleteAction',));
-                }
-                not_did_you_do_it_delete_task_from_tasklist:
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'did_you_do_it_edit_task_from_tasklist');
+                    }
 
-                // did_you_do_it_modify_libelle_or_checked_task_from_tasklist
-                if (preg_match('#^/didyoudoit/tasklist/(?P<name>[^/]++)/task/(?P<libelle>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'did_you_do_it_edit_task_from_tasklist')), array (  '_controller' => 'Projects\\DidYouDoItBundle\\Controller\\TaskController::editAction',));
+                }
+                not_did_you_do_it_edit_task_from_tasklist:
+
+                // did_you_do_it_modify_task_from_tasklist
+                if (preg_match('#^/didyoudoit/tasklist/(?P<idTaskList>[^/]++)/task/(?P<idTask>[^/]++)$#s', $pathinfo, $matches)) {
                     if ($this->context->getMethod() != 'PUT') {
                         $allow[] = 'PUT';
-                        goto not_did_you_do_it_modify_libelle_or_checked_task_from_tasklist;
+                        goto not_did_you_do_it_modify_task_from_tasklist;
                     }
 
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'did_you_do_it_modify_libelle_or_checked_task_from_tasklist')), array (  '_controller' => 'Projects\\DidYouDoItBundle\\Controller\\TaskController::modifyLibelleOrCheckedAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'did_you_do_it_modify_task_from_tasklist')), array (  '_controller' => 'Projects\\DidYouDoItBundle\\Controller\\TaskController::modifyAction',));
                 }
-                not_did_you_do_it_modify_libelle_or_checked_task_from_tasklist:
+                not_did_you_do_it_modify_task_from_tasklist:
+
+            }
+
+            if (0 === strpos($pathinfo, '/didyoudoit/oauth')) {
+                // connection_oauth
+                if ($pathinfo === '/didyoudoit/oauthconnection') {
+                    return array (  '_controller' => 'Projects\\DidYouDoItBundle\\Controller\\OAuthController::connectionAction',  '_route' => 'connection_oauth',);
+                }
+
+                // oauth2_callback
+                if ($pathinfo === '/didyoudoit/oauth2callback') {
+                    return array (  '_controller' => 'Projects\\DidYouDoItBundle\\Controller\\OAuthController::oauth2callbackAction',  '_route' => 'oauth2_callback',);
+                }
 
             }
 

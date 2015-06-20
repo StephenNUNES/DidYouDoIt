@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Task list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Task_id</th>
+                <th>Libelle</th>
+                <th>Checked</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('did_you_do_it_get_one_tasklist', { 'id': entity.task_id }) }}">{{ entity.taskid }}</a></td>
+                <td>{{ entity.libelle }}</td>
+                <td>{{ entity.checked }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('did_you_do_it_get_one_tasklist', { 'id': entity.task_id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('did_you_do_it_edit_tasklist', { 'id': entity.task_id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('did_you_do_it_new_tasklist') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

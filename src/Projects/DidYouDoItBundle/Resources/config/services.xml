@@ -2,20 +2,29 @@
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="http://symfony.com/schema/dic/services/services-1.0.xsd">
     <parameters>
-        <parameter key="DidYouDoItBundle.DoctrinePersistance.class">DidYouDoItBundle\DependencyInjection\DoctrinePersistance</parameter>
-        <parameter key="DidYouDoItBundle.GooglePersistance.class">DidYouDoItBundle\DependencyInjection\GooglePersistance</parameter>
+        <parameter key="did_you_do_it_doctrine_persistance">Projects\DidYouDoItBundle\DependencyInjection\DoctrinePersistance</parameter>
+        <parameter key="did_you_do_it_google_persistance">Projects\DidYouDoItBundle\DependencyInjection\GooglePersistance</parameter>
+        <parameter key="did_you_do_it_task_list_type">Projects\DidYouDoItBundle\Form\TaskListType</parameter>
+        <parameter key="did_you_do_it_task_type">Projects\DidYouDoItBundle\Form\TaskType</parameter>
+        <parameter key="session">Symfony\Component\HttpFoundation\Session\Session</parameter>
     </parameters>
 
     <services>
+        <service id="Session" class="%session%" />
         <service id="DoctrinePersistance" class="%did_you_do_it_doctrine_persistance%" public="false">
             <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument></argument>
             <argument></argument>
         </service>
         <service id="GooglePersistance" class="%did_you_do_it_google_persistance%" public="false">
             <argument></argument>
-            <argument></argument>
+            <argument type="service" id="happyr.google.api.client" />
+            <argument type="service" id="Session" />
         </service>
-        <service id="persistance" alias="doctrinepersistance" />
+        <!--<service id="persistance" alias="DoctrinePersistance" />-->
+        <service id="persistance" alias="GooglePersistance" />
+        <service id="TaskListType" class="%did_you_do_it_task_list_type%" />
+        <service id="TaskType" class="%did_you_do_it_task_type%" />
     </services>
 </container>
 

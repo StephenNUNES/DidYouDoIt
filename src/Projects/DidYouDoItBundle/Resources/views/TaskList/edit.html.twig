@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h2 class="text-left">TaskList edit</h2>
+    
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Update" class="btn btn-warning" />
+    {{ form_end(edit_form) }}
+
+    {{ form_start(delete_form) }}
+        {{ form_widget(delete_form) }}
+        <input type="submit" value="Delete" class="btn btn-danger" />
+    {{ form_end(delete_form) }}
+
+    <ul class="list-unstyled">
+        <li>
+            <a class="btn btn-primary" role="button" href="{{ path('did_you_do_it_get_all_tasklist') }}">
+                Back to the list
+            </a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h2>{{ entity.name }}</h2>
+    <table class="table table-hover">
+        {% for task in tasks %}
+            <tr>
+                <td>
+                    {% if task.checked %}
+                        <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                    {% else %}
+                        <span class="glyphicon glyphicon-unchecked aria-hidden="true"></span>
+                    {% endif %}
+                <td>{{ task.libelle }}</td>
+                </td>
+			    <td><a class="btn btn-warning" role="button"  href="{{ path('did_you_do_it_edit_task_from_tasklist', {'idTaskList' : entity.tasklistid, 'idTask' : task.taskid }) }}">
+				    Edit task 
+			        </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+	<ul class="list-unstyled">
+		<li>
+		<a class="btn btn-success" role="button" href="{{ path('did_you_do_it_new_task', { 'idTaskList': entity.tasklistid }) }}">
+			Add new Task
+		</a>
+		</li>
+		<li>
+			<a class="btn btn-warning" role="button" href="{{ path('did_you_do_it_edit_tasklist', { 'id': entity.tasklistid }) }}">
+				Edit
+			</a>
+		</li>
+		<li>{{ form(delete_form) }}</li>
+		<li>
+			<a class="btn btn-primary" role="button" href="{{ path('did_you_do_it_get_all_tasklist') }}">
+				Back to the list
+			</a>
+		</li>
+	</ul>
+{% endblock %}

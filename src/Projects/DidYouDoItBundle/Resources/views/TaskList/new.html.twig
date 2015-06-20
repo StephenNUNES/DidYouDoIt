@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h2 class="text-left">TaskList creation</h2>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" class="btn btn-success" />
+    {{ form_end(form) }}
+
+    <ul class="list-unstyled">
+        <li>
+            <a href="{{ path('did_you_do_it_get_all_tasklist') }}">
+                Back to the list
+            </a>
+    </li>
+</ul>
+{% endblock %}

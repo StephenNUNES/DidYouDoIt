@@ -44,6 +44,14 @@ class Task
     }
 
     /**
+     * Set task_id
+     */
+    public function setTaskId($id)
+    {
+        $this->task_id = $id;
+    }
+
+    /**
      * Set libelle
      *
      * @param string $libelle

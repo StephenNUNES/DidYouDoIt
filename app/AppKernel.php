@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
             new Projects\DidYouDoItBundle\DidYouDoItBundle(),
+            new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
+            new HappyR\Google\ApiBundle\HappyRGoogleApiBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
